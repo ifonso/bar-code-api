@@ -1,4 +1,10 @@
 {
+  "exclude": ["**/__pycache__"],
+  "ignore": ["**/__pycache__"],
+  "pythonVersion": "3.12",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": true,
+  "typeCheckingMode": "basic",
   "venvPath": ".",
   "venv": ".venv"
 }
