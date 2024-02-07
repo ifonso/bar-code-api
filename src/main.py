@@ -1,4 +1,2 @@
-
-
-def my_func():
+def main():
     pass
