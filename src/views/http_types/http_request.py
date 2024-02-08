@@ -1,12 +1,12 @@
-from typing import Dict, Union
+from typing import Dict, Any, Union
 
 
 class HttpRequest:
     def __init__(
         self,
-        header: Union[Dict, None] = None,
-        body: Union[Dict, None] = None,
-        query_params: Union[Dict, None] = None
+        header: Union[Dict[str, Any], None] = None,
+        body: Union[Dict[str, Any], None] = None,
+        query_params: Union[Dict[str, Any], None] = None
     ) -> None:
         self.header = header
         self.body = body
