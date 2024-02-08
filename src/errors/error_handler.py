@@ -1,17 +1,19 @@
 from src.views.http_types.http_response import HttpResponse
-
-
-def log_error(func):
-    def wrapper(*args, **kwargs):
-        try:
-            return func(*args, **kwargs)
-        except Exception as e:
-            print(f'Error: {e}')
-            return None
-    return wrapper
+from src.errors.error_types.http_unprocessable_entity import HttpUnprocessableEntityError
 
 
 def handle_errors(error: Exception) -> HttpResponse:
+    if isinstance(error, HttpUnprocessableEntityError):
+        return HttpResponse(
+            status_code=error.status_code,
+            body={
+                "errors": [{
+                    "title": error.name,
+                    "detail": error.message
+                }]
+            }
+        )
+
     return HttpResponse(
         status_code=500,
         body={
