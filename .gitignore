@@ -2,3 +2,6 @@
 
 # python virtual env
 .venv
+
+# python tests cache
+.pytest_cache
