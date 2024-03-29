@@ -1,10 +1,10 @@
-from typing import Any
+from typing import Any, Never
 from cerberus import Validator
 
 from src.errors.error_types.http_unprocessable_entity import HttpUnprocessableEntityError
 
 
-def tag_creator_validator(request: Any) -> None:
+def tag_creator_validator(request: Any) -> Never:
     """
     Validates the incoming request for the tag creator.
 
